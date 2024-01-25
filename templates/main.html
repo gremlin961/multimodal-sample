@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Encoder</title>
+    <link href="/static/style.css" rel="stylesheet">
+</head>
+<body>
+    <h1>Image Encoder</h1>
+    <p>Upload an image file to get its base64 encoded string.</p>
+    <form method="post" enctype="multipart/form-data">
+        <label for="image">Choose Image:</label>
+        <input type="file" name="image" id="image" accept="image/*, video/*" required>
+
+        <label for="media_type">Media Type:</label>
+        <select name="media_type" id="media_type">
+            <option value="image" selected>Image</option>
+            <option value="video">Video</option>
+        </select>
+
+        <label for="project_id">Project ID:</label>
+        <input type="text" name="project_id" id="project_id" required>
+
+        <label for="secret_name">Secret Name:</label>
+        <input type="text" name="secret_name" id="secret_name" required>
+
+        <button type="submit">Submit</button>
+    </form>
+    <div id="result"></div>
+
+    <script>
+        const form = document.querySelector('form');
+        const result = document.getElementById('result');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const formData = new FormData(form);
+            // Get media type value
+            const mediaType = formData.get('media_type');
+
+            fetch('/', {
+                method: 'POST',
+                body: formData,
+            })
+            .then(res => res.json())
+            .then(data => {
+                result.innerHTML += `<p>Secret Name:</p><p>${data.secret_name}</p>`;
+                result.innerHTML += `<p>Prompt Text:</p><p>${data.prompt_text}</p>`;
+                result.innerHTML += `<p>Generated Text:</p><p>${data.generated_text}</p>`; // Display generated text here
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Error encoding image.');
+            });
+        });
+    </script>
+</body>
+</html>
