@@ -24,12 +24,19 @@ Click "Submit" to generate text from the media file.
 Directory Structure
 .
 ├── main.py
+
 ├── pkg
+
 │   └── SecurePrompt.py
+
 ├── static
+
 │   └── style.css
+
 └── templates
+
     └── main.html
+
 
 Disclaimer
 This project is intended for demonstration purposes only and should not be used in production environments.
