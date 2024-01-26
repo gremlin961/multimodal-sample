@@ -1,0 +1,30 @@
+{
+  "title": "secure-prompt-example",
+  "description": "",
+  "parameters": {
+    "groundingPromptConfig": {
+      "disabled": true,
+      "groundingConfig": {
+        "sources": [
+          {
+            "type": "ENTERPRISE"
+          }
+        ]
+      }
+    },
+    "stopSequences": [],
+    "temperature": 0.4,
+    "tokenLimits": 2048,
+    "topK": 32,
+    "topP": 1
+  },
+  "type": "multimodal_freeform",
+  "prompt": {
+    "parts": [
+      {
+        "text": "Briefly describe each product you see in this picture. Provide your response in JSON format including the brand, description and size. If you can not determine the size, mark it as NA. Do not include the json prefix in your response."
+      }
+    ]
+  },
+  "model": "gemini-pro-vision"
+}
