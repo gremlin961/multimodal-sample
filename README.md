@@ -4,6 +4,7 @@
 This project provides a web application that allows users to generate text from images or videos using a Vertex AI generative model. The prompt text for the model is securely retrieved from Google Cloud Secret Manager.
 
 Setup
+
 1 Clone this repository to your local machine.
 
 2 Create a Google Cloud project and enable the Vertex AI API.
