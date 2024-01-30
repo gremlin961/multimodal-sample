@@ -1,7 +1,7 @@
 # Vertex AI Generative Multimodal Example
 
 # Description
-This project provides a web application that allows users to generate text from images or videos using a Vertex AI generative model. The prompt text for the model is securely retrieved from Google Cloud Secret Manager.
+This project provides a web application that allows users to generate text from different modalities (images or videos) using the Gemini Vision Pro multimodal model. The prompt text for the model is securely retrieved from Google Cloud Secret Manager.
 
 Setup
 
