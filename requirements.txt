@@ -1,3 +1,7 @@
 fastapi
+Jinja2
+uvicorn
+python-multipart
 google.cloud
 google-cloud-aiplatform
+google-cloud-secret-manager
